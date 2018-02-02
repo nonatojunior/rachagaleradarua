@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Jogadores</h3>
+  </div>
+  <div class="panel-body">
+		<table class="table table-hover ">
+		  <thead>
+		    <tr>
+		      <th>Nome</th>
+		      <th>Ativo</th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @jogadores.each do |jogador| %>
+		      <tr>
+		        <td><%= jogador.nome %></td>
+		        <td><%= (jogador.ativo == true ? "<i class='fa fa-check' aria-hidden='true'></i> Ativo" : "<i class='fa fa-times' aria-hidden='true'></i> Inativo").html_safe %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+  </div>
+</div>

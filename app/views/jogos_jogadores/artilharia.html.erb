@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Artilheiros</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Posição</th>
+          <th>Jogador</th>
+          <th>Gols</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% contador = 0 %>
+        <% @artilheiros.each do |artilheiro| %>
+	          <tr>
+              <td><%= (contador += 1).to_s + 'º' %></td>
+	            <td><%= artilheiro[:jogador] %></td>
+	            <td><%= artilheiro[:gol] %></td>
+	          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

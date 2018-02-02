@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: racha_galera_da_rua
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
+  schema_search_path: racha_galera_da_rua
+
+test:
+  <<: *default
+  database: RachaGaleraDaRua_test
+
+production:
+  <<: *default
+  database: RachaGaleraDaRua_production
+  username: RachaGaleraDaRua
+  password: <%= ENV['RACHAGALERADARUA_DATABASE_PASSWORD'] %>

@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Jogo</h3>
+  </div>
+  <div class="panel-body">
+		<p>
+		  <strong>Dia:</strong>
+		  <%= @jogo.dia.strftime('%d/%m/%Y') if !@jogo.dia.nil? %>
+		</p>
+
+		<p>
+		  <strong>Tipo de Jogo:</strong>
+		  <%= @jogo.tipo_jogo %>
+		</p>
+
+		<%= link_to 'Editar', edit_jogo_path(@jogo), class: 'btn btn-default' %>
+		<%= link_to 'Voltar', jogos_path, class: 'btn btn-default' %>
+  </div>
+</div>

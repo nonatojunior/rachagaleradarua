@@ -1,0 +1,53 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Jogadores Presentes no Jogo do Dia: <%= @jogo.dia.strftime('%d/%m/%Y') if !@jogo.nil? %> </h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-hover">
+      <thead>
+        <tr class="info">
+          <th class="text-center">Qtdd Jogadores</th>
+          <th class="text-center">Qtdd Gols</th>
+          <th class="text-center">Qtdd Cota</th>
+          <th class="text-center">Súmula</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center"><kbd><%= @jogadores.count.to_s + " jogadores" %></kbd></td>
+          <td class="text-center"><kbd><%= @jogadores.map { |e| e.gol }.sum.to_s + " gols" %></kbd></td>
+          <td class="text-center"><kbd><%= number_to_currency(@jogadores.map { |e| e.cota }.sum, unit: "R$", separator: ",", delimiter: "") + " reais" %></kbd></td>
+          <td class="text-center"><%= link_to 'Súmula', @jogo.sumula, target: '_blank' if !@jogo.sumula.nil? %></td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Jogador</th>
+          <th>Gol</th>
+          <th>Cota</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @jogadores.each do |jogos_jogador| %>
+          <tr>
+            <td><%= jogos_jogador.jogador.nome if !jogos_jogador.jogador.nil? && !jogos_jogador.jogador.nome.nil? %></td>
+            <td><%= jogos_jogador.gol %></td>
+            <td><%= number_to_currency(jogos_jogador.cota, unit: "R$", separator: ",", delimiter: "") %></td>
+            <td><%= link_to 'Editar', edit_jogos_jogador_path(jogos_jogador.id), class: 'btn btn-default' if usuario_signed_in? %></td>
+            <td><%= link_to 'Deletar', jogos_jogador, method: :delete, data: { confirm: 'Deseja deletar?' }, class: 'btn btn-default' if usuario_signed_in? %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <% if usuario_signed_in? %>
+    	<%= link_to 'Voltar', jogos_path, class: 'btn btn-default' %>
+    <% else %>
+    	<%= link_to 'Voltar', index_usuario_jogos_path, class: 'btn btn-default' %>
+    <% end %>
+  </div>
+</div>

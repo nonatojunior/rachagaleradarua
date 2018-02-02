@@ -1,0 +1,2 @@
+$('#jogadores').html("<%= j render :partial => '/jogos_jogadores/jogadores_jogo', :locals => {lista_jogadores_jogo: @lista_jogadores_jogo} %>");
+$('#mensagem').notify('Jogador adicionado com sucesso!', 'success');

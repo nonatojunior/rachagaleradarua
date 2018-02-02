@@ -1,0 +1,42 @@
+<%= form_for(@jogos_jogador, {:remote => true}) do |f| %>
+  <% if params[:id] %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.label :jogo_id %><br>
+        <%= f.hidden_field  :jogo_id, :value => JogosJogador.find(params[:id]).jogo.id, readonly: true, class: 'form-control' %>
+        <%= text_field_tag :jogo_id, JogosJogador.find(params[:id]).jogo.dia.strftime('%d/%m/%Y'), readonly: true, class: 'form-control' %>
+      </div>
+    </div>
+  <% else %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.label :jogo_id %><br>
+        <%= f.text_field :jogo_id, :value => params[:dia], readonly: true, class: 'form-control' %>
+      </div>
+    </div>
+  <% end %>
+  <br>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.label :jogador_id %><br>
+      <%= f.select(:jogador_id, Jogador.all.collect {|e| [e.nome, e.id]}, {:prompt => 'Selecione'}, {:class => 'form-control'}) %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :gol, "Qtdd Gol" %><br>
+      <%= f.number_field :gol, in: (0..100), class: 'form-control' %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :cota, "R$ Cota" %><br>
+      <%= f.text_field :cota, class: 'form-control' %>
+    </div>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit 'Salvar', :id => 'adicionar', class: 'btn btn-default' %>
+    <%= link_to 'Voltar', jogos_path, class: 'btn btn-default' %>
+  </div>
+<% end %>
+<br>
+<div id="mensagem"></div>
+<hr>
+<div id="jogadores"></div>

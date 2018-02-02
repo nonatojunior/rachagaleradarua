@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Informações do Jogador no Jogo</h3>
+  </div>
+  <div class="panel-body">
+		<p>
+		  <strong>Jogo:</strong>
+		  <%= @jogos_jogador.jogo.dia.strftime('%d/%m/%Y') if !@jogos_jogador.jogo.nil? && !@jogos_jogador.jogo.dia.nil? %>
+		</p>
+
+		<p>
+		  <strong>Jogador:</strong>
+		  <%= @jogos_jogador.jogador.nome if !@jogos_jogador.jogador.nil? && !@jogos_jogador.jogador.nome.nil? %>
+		</p>
+
+		<p>
+		  <strong>Gol:</strong>
+		  <%= @jogos_jogador.gol %>
+		</p>
+
+		<p>
+		  <strong>Cota:</strong>
+		  <%= @jogos_jogador.cota %>
+		</p>
+
+		<%= link_to 'Editar', edit_jogos_jogador_path(@jogos_jogador), class: 'btn btn-default' %>
+		<%= link_to 'Voltar', jogos_jogadores_path, class: 'btn btn-default' %>
+  </div>
+</div>

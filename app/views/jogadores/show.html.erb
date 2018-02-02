@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Jogador</h3>
+  </div>
+  <div class="panel-body">
+		<p>
+		  <strong>Nome:</strong>
+		  <%= @jogador.nome %>
+		</p>
+
+		<p>
+		  <strong>Ativo:</strong>
+		  <%= (@jogador.ativo == true ? "Ativo" : "Inativo") %>
+		</p>
+
+		<%= link_to 'Editar', edit_jogador_path(@jogador), class: 'btn btn-default' %>
+		<%= link_to 'Voltar', jogadores_path, class: 'btn btn-default' %>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+        $('#container').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Artilheiros'
+            },
+            subtitle: {
+                text: 'Primeiros 5 jogadores com maior saldo de gols.'
+            },
+            xAxis: {
+                type: 'category',
+                labels: {
+                    rotation: -45,
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Gols'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: 'Total: <b>{point.y:.f} gols</b>'
+            },
+            series: [{
+                name: 'Population',
+                data: <%= raw @dados %>,
+                dataLabels: {
+                    enabled: true,
+                    rotation: 360,
+                    color: '#FFFFFF',
+                    align: 'right',
+                    format: '{point.y:.f}', // one decimal
+                    y: 10, // 10 pixels down from the top
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            }]
+        });
+	});
+</script>
+
+<div id="container"></div>

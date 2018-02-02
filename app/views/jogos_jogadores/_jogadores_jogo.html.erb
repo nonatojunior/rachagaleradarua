@@ -1,0 +1,18 @@
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Jogador</th>
+			<th>Gols</th>
+			<th>Cota</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @lista_jogadores_jogo.each do |jogador| %>
+			<tr>
+				<td><%= jogador.jogador.nome if !jogador.jogador_id.nil? %></td>
+				<td><%= jogador.gol if !jogador.gol.nil? %></td>
+				<td><%= jogador.cota if !jogador.cota.nil? %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

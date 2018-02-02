@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jogo_id: 
+  jogador_id: 
+  gol: 1
+  cota: 9.99
+
+two:
+  jogo_id: 
+  jogador_id: 
+  gol: 1
+  cota: 9.99
