@@ -49,49 +49,6 @@
                 }
             }]
         });
-
-        $('#contabilidade').highcharts({
-            chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false,
-                type: 'pie'
-            },
-            title: {
-                text: 'Gráfico do Financeiro'
-            },
-            tooltip: {
-                pointFormat: '{series.name} (R$): <b>{point.y:.f}%</b>'
-            },
-            accessibility: {
-                point: {
-                    valueSuffix: '%'
-                }
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: true,
-                        format: '<b>{point.name} (R$)</b>: {point.y:.f}'
-                    }
-                }
-            },
-            series: [{
-                name: 'Valor (R$)',
-                colorByPoint: true,
-                data: [{
-                    name: 'Crédito',
-                    y: <%= raw Jogo.credito %>,
-                    sliced: true,
-                    selected: true
-                }, {
-                    name: 'Débito',
-                    y: <%= raw Jogo.debito %>
-                }]
-            }]
-        });
 	});
 </script>
 
@@ -135,5 +92,3 @@
     <div id="artilharia"></div>
   </div>
 </div>
-<%# <br>
-<div id="contabilidade"></div> %>
