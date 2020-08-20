@@ -60,7 +60,7 @@
     <div class="row">
         <div class="col-md-2">
             <h4><b>Crédito</b></h4>
-            <h3 style="color: green;"><%= number_to_currency(Jogo.credito) if Jogo.credito? %></h3>
+            <h3 style="color: green;"><%= number_to_currency(Jogo.credito) || 0 %></h3>
         </div>
         <div class="col-md-2">
             <br>
@@ -68,7 +68,7 @@
         </div>
         <div class="col-md-2">
             <h4><b>Débito</b></h4>
-            <h3 style="color: red;"><%= number_to_currency(Jogo.debito) if Jogo.debito? %></h3>
+            <h3 style="color: red;"><%= number_to_currency(Jogo.debito) || 0 %></h3>
         </div>
         <div class="col-md-2">
             <br>
@@ -76,7 +76,7 @@
         </div>
         <div class="col-md-2">
             <h4><b>Saldo</b></h4>
-            <h3><%= number_to_currency(Jogo.saldo) if Jogo.saldo? %></h3>
+            <h3><%= number_to_currency(Jogo.saldo) || 0 %></h3>
         </div>
     </div>
   </div>
