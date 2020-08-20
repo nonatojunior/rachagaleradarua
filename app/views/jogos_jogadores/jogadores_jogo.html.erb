@@ -8,7 +8,8 @@
         <tr class="info">
           <th class="text-center">Qtdd Jogadores</th>
           <th class="text-center">Qtdd Gols</th>
-          <th class="text-center">Qtdd Cota</th>
+          <th class="text-center">Cota (R$)</th>
+          <th class="text-center">Despesa (R$)</th>
           <th class="text-center">Súmula</th>
         </tr>
       </thead>
@@ -17,6 +18,7 @@
           <td class="text-center"><kbd><%= @jogadores.count.to_s + " jogadores" %></kbd></td>
           <td class="text-center"><kbd><%= @jogadores.map { |e| e.gol }.sum.to_s + " gols" %></kbd></td>
           <td class="text-center"><kbd><%= number_to_currency(@jogadores.map { |e| e.cota }.sum, unit: "R$", separator: ",", delimiter: "") + " reais" %></kbd></td>
+          <td class="text-center"><kbd><%= number_to_currency(@jogo.despesa, unit: "R$", separator: ",", delimiter: "") + " reais" %></kbd></td>
           <td class="text-center"><%= link_to 'Súmula', @jogo.sumula, target: '_blank' if !@jogo.sumula.nil? %></td>
         </tr>
       </tbody>
@@ -26,7 +28,7 @@
       <thead>
         <tr>
           <th>Jogador</th>
-          <th>Gol</th>
+          <th>Gols</th>
           <th>Cota</th>
           <th colspan="3"></th>
         </tr>

@@ -22,11 +22,11 @@
       <%= f.select(:jogador_id, Jogador.all.collect {|e| [e.nome, e.id]}, {:prompt => 'Selecione'}, {:class => 'form-control'}) %>
     </div>
     <div class="col-md-2">
-      <%= f.label :gol, "Qtdd Gol" %><br>
+      <%= f.label :gol, "Qtdd Gols" %><br>
       <%= f.number_field :gol, in: (0..100), class: 'form-control' %>
     </div>
     <div class="col-md-2">
-      <%= f.label :cota, "R$ Cota" %><br>
+      <%= f.label :cota, "Cota (R$)" %><br>
       <%= f.text_field :cota, class: 'form-control' %>
     </div>
   </div>

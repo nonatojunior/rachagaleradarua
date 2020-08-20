@@ -19,6 +19,13 @@
     </div>
   </div>
   <br>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.label :despesa, "Despesa (R$)" %><br>
+      <%= f.text_field :despesa, class: 'form-control' %>
+    </div>
+  </div>
+  <br>
   <div class="actions">
     <%= f.submit 'Salvar', class: 'btn btn-default' %>
     <%= link_to 'Voltar', jogos_path, class: 'btn btn-default' %>
