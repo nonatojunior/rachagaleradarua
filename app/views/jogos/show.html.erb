@@ -13,6 +13,16 @@
 		  <%= @jogo.tipo_jogo %>
 		</p>
 
+		<p>
+		  <strong>Despesa:</strong>
+		  <%= number_to_currency(@jogo.despesa) %>
+		</p>
+
+		<p>
+		  <strong>Descrição da Despesa:</strong>
+		  <%= @jogo.descricao_despesa %>
+		</p>
+
 		<%= link_to 'Editar', edit_jogo_path(@jogo), class: 'btn btn-default' %>
 		<%= link_to 'Voltar', jogos_path, class: 'btn btn-default' %>
   </div>

@@ -23,3 +23,7 @@
 //= require_tree .
 
 // Turbolinks.enableProgressBar();
+
+$(function () {
+  $('[data-toggle="popover"]').popover();
+});

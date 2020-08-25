@@ -26,6 +26,13 @@
     </div>
   </div>
   <br>
+  <div class="row">
+    <div class="col-md-8">
+      <%= f.label :descricao_despesa, "Descrição da Despesa" %><br>
+      <%= f.text_field :descricao_despesa, class: 'form-control' %>
+    </div>
+  </div>
+  <br>
   <div class="actions">
     <%= f.submit 'Salvar', class: 'btn btn-default' %>
     <%= link_to 'Voltar', jogos_path, class: 'btn btn-default' %>
