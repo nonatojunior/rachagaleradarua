@@ -22,6 +22,11 @@
 		  <strong>Descrição da Despesa:</strong>
 		  <%= @jogo.descricao_despesa %>
 		</p>
+		
+		<p>
+		  <strong>Súmula:</strong>
+		  <a href="<%= @jogo.sumula %>" target="_blank"><%= @jogo.sumula || "Não Informado" %></a>
+		</p>
 
 		<%= link_to 'Editar', edit_jogo_path(@jogo), class: 'btn btn-default' %>
 		<%= link_to 'Voltar', jogos_path, class: 'btn btn-default' %>
