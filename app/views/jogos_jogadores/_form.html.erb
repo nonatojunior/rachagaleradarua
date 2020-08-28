@@ -23,11 +23,11 @@
     </div>
     <div class="col-md-2">
       <%= f.label :gol, "Qtdd Gols" %><br>
-      <%= f.number_field :gol, in: (0..100), class: 'form-control' %>
+      <%= f.number_field :gol, value: "0", in: (0..100), class: 'form-control' %>
     </div>
     <div class="col-md-2">
       <%= f.label :cota, "Cota (R$)" %><br>
-      <%= f.text_field :cota, class: 'form-control' %>
+      <%= f.text_field :cota, value: "0", class: 'form-control' %>
     </div>
   </div>
   <br>
